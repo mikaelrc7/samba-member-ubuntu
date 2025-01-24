@@ -130,6 +130,9 @@ echo "
 [Seat:*]
 greeter-show-manual-login=true" > /etc/lightdm/lightdm.conf
 
+# Allow domain homedir on apparmor, to enable snap applications usage.
+echo "
+@{HOMEDIRS}+=/home/$WORKGROUP/" >> /etc/apparmor.d/tunables/home.d/ubuntu
 
 
 ### Source:
